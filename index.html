@@ -1,175 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mukul Personal Website</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukul Panchal | Developer</title>
 
 <style>
 
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
+
 body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  background-color:#f2f2f2;
+background:#0b1120;
+color:#e2e8f0;
+transition:0.4s;
 }
 
-/* responsive images */
-img{
-  max-width:100%;
-  height:auto;
+.light{
+background:#f1f5f9;
+color:#0f172a;
 }
 
-.navbar{
-  background:black;
-  padding:12px;
-  text-align:center;
+nav{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:18px;
+background:#020617;
+position:sticky;
+top:0;
+z-index:10;
 }
 
-.navbar a{
-  color:white;
-  margin:10px;
-  text-decoration:none;
-  font-size:18px;
-  display:inline-block;
+nav a{
+color:white;
+text-decoration:none;
+font-weight:600;
 }
 
-.header{
-  background:#00bcd4;
-  color:white;
-  text-align:center;
-  padding:30px;
-  overflow:hidden;
+.toggle{
+position:fixed;
+right:15px;
+top:15px;
+cursor:pointer;
+padding:8px 12px;
+background:#38bdf8;
+color:black;
+border-radius:6px;
 }
 
-.header img{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  border:3px solid white;
-  object-fit:cover;
-  object-position:center top;
+.hero{
+text-align:center;
+padding:80px 20px;
 }
 
-.container{
-  background:white;
-  margin:20px;
-  padding:20px;
-  border-radius:8px;
-  box-shadow:0px 0px 8px rgba(0,0,0,0.1);
-  display:none;
+.hero img{
+width:160px;height:160px;border-radius:50%;
+object-fit:cover;
+border:3px solid #38bdf8;
+margin-bottom:15px;
 }
+
+.section{
+max-width:1000px;
+margin:25px auto;
+padding:25px;
+background:#020617;
+border-radius:14px;
+box-shadow:0 0 18px rgba(0,0,0,0.4);
+animation:fade 0.6s ease;
+}
+
+.light .section{
+background:white;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;}
+}
+
+h2{color:#38bdf8;margin-bottom:15px;}
+
+.bar{height:8px;background:#1e293b;border-radius:6px;overflow:hidden;margin-bottom:12px;}
+.fill{height:100%;background:#38bdf8;}
+
+.card{
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+margin-bottom:12px;
+transition:0.3s;
+}
+
+.light .card{background:#e2e8f0;}
+
+.card:hover{transform:translateY(-5px);}
 
 button{
-  padding:8px 14px;
-  margin:5px;
-  background:black;
-  color:white;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
+padding:10px 16px;
+border:none;
+background:#38bdf8;
+color:black;
+font-weight:bold;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
 }
 
-.footer{
-  background:black;
-  color:white;
-  text-align:center;
-  padding:10px;
+footer{
+text-align:center;
+padding:18px;
+background:#020617;
+margin-top:40px;
 }
 
-/* 📱 mobile responsive */
+.typing{
+font-size:20px;
+color:#38bdf8;
+height:28px;
+}
+
 @media(max-width:600px){
-
-.navbar a{
-  display:block;
-  margin:8px 0;
-}
-
-.header img{
-  width:100px;
-  height:100px;
-}
-
+nav{flex-direction:column;}
 }
 
 </style>
-
-<script>
-
-function showSection(id){
-
-var sections=document.getElementsByClassName("container");
-
-for(var i=0;i<sections.length;i++){
-sections[i].style.display="none";
-}
-
-document.getElementById(id).style.display="block";
-
-}
-
-</script>
-
 </head>
 
-<body onload="showSection('home')">
+<body>
 
-<div class="navbar">
-<a href="#" onclick="showSection('home')">Home</a>
-<a href="#" onclick="showSection('about')">About</a>
-<a href="#" onclick="showSection('skills')">Skills</a>
-<a href="#" onclick="showSection('contact')">Contact</a>
-</div>
+<div class="toggle" onclick="toggleMode()">Toggle Mode</div>
 
-<div class="header">
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
 <img src="Mukul Stylish Photo.jpg">
-<h1>Mukul Portfolio</h1>
-<p>Future Full Stack Developer</p>
+<h1>Mukul Panchal</h1>
+<div class="typing" id="typing"></div>
 </div>
 
-<div id="home" class="container">
-<h2>Home</h2>
-<p>Hello, welcome to my personal website. I am learning web development.</p>
-</div>
-
-<div id="about" class="container">
+<div id="about" class="section">
 <h2>About Me</h2>
-<p>My name is Mukul Panchal.</p>
-<p>I am studying Diploma in Computer Science.</p>
-<p>I want to become a Full Stack Developer.</p>
+<p>I am a passionate developer and creator learning real-world coding and building modern web projects with clean UI and practical design.</p>
 </div>
 
-<div id="skills" class="container">
-<h2>My Skills</h2>
+<div id="skills" class="section">
+<h2>Skills</h2>
 
-<ul>
-<li>Video Editing</li>
-<li>Graphic Designing</li>
-<li>Basic Coding</li>
-<li>Thumbnail Making</li>
-<li>Social Media</li>
-</ul>
+HTML/CSS
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+
+JavaScript
+<div class="bar"><div class="fill" style="width:65%"></div></div>
+
+Video Editing
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+
+</div>
+
+<div id="projects" class="section">
+<h2>Projects</h2>
+
+<div class="card">Personal Portfolio Website</div>
+<div class="card">YouTube Creator Automation</div>
 
 <button onclick="window.open('https://youtube.com/@mukulgrowai')">
-My YouTube Channel
+Visit My YouTube
 </button>
 
 </div>
 
-<div id="contact" class="container">
-<h2>Contact Me</h2>
+<div id="contact" class="section">
+<h2>Contact</h2>
 
 <p>Email: panchalmukul453@gmail.com</p>
 
 <button onclick="window.location.href='tel:9266470473'">Call Me</button>
-
-<button onclick="window.open('https://wa.me/919266470473')">
-WhatsApp
-</button>
+<button onclick="window.open('https://wa.me/919266470473')">WhatsApp</button>
 
 </div>
 
-<div class="footer">
-<p>2026 © Mukul</p>
-</div>
+<footer>
+<p>© 2026 Mukul Panchal</p>
+</footer>
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+const text=["Web Developer","Content Creator","Future Full Stack Engineer"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+current=text[i];
+document.getElementById("typing").textContent=current.substring(0,j);
+
+if(!isDeleting && j<current.length){j++;}
+else if(isDeleting && j>0){j--;}
+
+if(j==current.length){isDeleting=true;setTimeout(type,900);return;}
+if(j==0 && isDeleting){isDeleting=false;i=(i+1)%text.length;}
+
+setTimeout(type,isDeleting?50:100);
+}
+type();
+
+</script>
 
 </body>
 </html>
