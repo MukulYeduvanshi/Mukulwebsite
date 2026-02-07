@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mukul Panchal | Professional Portfolio</title>
+<title>Mukul Panchal | Portfolio </title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
 
 body{
-color:white;
 background:#020617;
+color:white;
 overflow-x:hidden;
 }
 
@@ -27,13 +27,14 @@ z-index:10;
 
 nav a{color:white;text-decoration:none;font-weight:bold;}
 
-.hero{text-align:center;padding:80px 20px;}
+.hero{text-align:center;padding:90px 20px;}
 
 .hero img{
-width:170px;height:170px;border-radius:50%;
+width:180px;height:180px;border-radius:50%;
 object-fit:cover;
 object-position:center 15%;
 border:3px solid #38bdf8;
+box-shadow:0 0 25px #38bdf8;
 }
 
 .section{
@@ -42,26 +43,25 @@ margin:30px auto;
 padding:25px;
 border-radius:15px;
 background:#0f172a;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
 
 h2{color:#38bdf8;margin-bottom:15px;}
 
-.skill{margin-bottom:15px;}
-.bar{height:8px;background:#1e293b;border-radius:6px;margin-top:5px;}
+.skill{margin-bottom:14px;}
+.bar{height:8px;background:#1e293b;border-radius:6px;margin-top:4px;}
 .fill{height:100%;background:#38bdf8;}
 
 .card{
 background:#020617;
 padding:18px;
-border-radius:10px;
+border-radius:12px;
 margin-bottom:15px;
+transition:0.3s;
 }
+.card:hover{transform:translateY(-5px);}
 
-.price{
-font-size:22px;
-color:#38bdf8;
-margin-top:8px;
-}
+.price{color:#38bdf8;font-size:22px;margin-top:6px;}
 
 button{
 padding:10px 16px;
@@ -72,6 +72,16 @@ font-weight:bold;
 cursor:pointer;
 margin-top:10px;
 }
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:6px;
+border:none;
+}
+
+form button{width:100%;}
 </style>
 </head>
 
@@ -81,20 +91,20 @@ margin-top:10px;
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#services">Services</a>
-<a href="#projects">Projects</a>
+<a href="#order">Order</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
 <img src="Mukul Stylish Photo.jpg">
 <h1>Mukul Panchal</h1>
-<p>Developer • Creator • Freelancer</p>
-<button onclick="window.open('https://wa.me/919266470473')">🔥 Hire Me</button>
+<p>Freelancer • Designer • Creator</p>
+<button onclick="window.open('https://wa.me/919266470473')">🔥 Hire Me Now</button>
 </div>
 
 <div id="about" class="section">
 <h2>About</h2>
-<p>I help creators & businesses grow with design, content & modern web solutions.</p>
+<p>I help creators & brands grow using modern design, content creation & powerful digital solutions.</p>
 </div>
 
 <div id="skills" class="section">
@@ -110,32 +120,38 @@ margin-top:10px;
 </div>
 
 <div id="services" class="section">
-<h2>Services & Pricing</h2>
+<h2>Services</h2>
 
 <div class="card">
-<h3>YouTube Thumbnail Design</h3>
+<h3>YouTube Thumbnail</h3>
 <div class="price">₹199</div>
-<button onclick="window.open('https://wa.me/919266470473?text=I want Thumbnail Service')">Order Now</button>
+<button onclick="window.open('https://wa.me/919266470473?text=Thumbnail Order')">Order</button>
 </div>
 
 <div class="card">
 <h3>Logo Design</h3>
 <div class="price">₹299</div>
-<button onclick="window.open('https://wa.me/919266470473?text=I want Logo Design')">Order Now</button>
+<button onclick="window.open('https://wa.me/919266470473?text=Logo Order')">Order</button>
 </div>
 
 <div class="card">
 <h3>Video Editing</h3>
 <div class="price">₹499</div>
-<button onclick="window.open('https://wa.me/919266470473?text=I want Video Editing')">Order Now</button>
+<button onclick="window.open('https://wa.me/919266470473?text=Video Editing Order')">Order</button>
 </div>
 
 </div>
 
-<div id="projects" class="section">
-<h2>Projects</h2>
-<div class="card">Personal Portfolio Website</div>
-<div class="card">YouTube Creator Automation</div>
+<div id="order" class="section">
+<h2>Client Order Form</h2>
+
+<form onsubmit="sendOrder();return false;">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="service" placeholder="Service Needed" required>
+<textarea id="message" placeholder="Project Details"></textarea>
+<button type="submit">Submit Order</button>
+</form>
+
 </div>
 
 <div id="contact" class="section">
@@ -143,6 +159,17 @@ margin-top:10px;
 <p>Email: panchalmukul453@gmail.com</p>
 <button onclick="window.open('https://wa.me/919266470473')">WhatsApp</button>
 </div>
+
+<script>
+function sendOrder(){
+let name=document.getElementById("name").value;
+let service=document.getElementById("service").value;
+let message=document.getElementById("message").value;
+
+let text=`New Order:%0AName: ${name}%0AService: ${service}%0ADetails: ${message}`;
+window.open(`https://wa.me/919266470473?text=${text}`);
+}
+</script>
 
 </body>
 </html>
