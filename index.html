@@ -3,31 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mukul Panchal | V100 Portfolio</title>
+<title>Mukul Panchal | Professional Portfolio</title>
 
 <style>
-
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial;}
 
 body{
 color:white;
-background:linear-gradient(-45deg,#020617,#0f172a,#020617,#020617);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
+background:#020617;
 overflow-x:hidden;
-}
-
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
 }
 
 nav{
 position:sticky;
 top:0;
-backdrop-filter:blur(10px);
-background:rgba(0,0,0,0.5);
+background:#000;
 display:flex;
 justify-content:center;
 gap:25px;
@@ -37,20 +27,13 @@ z-index:10;
 
 nav a{color:white;text-decoration:none;font-weight:bold;}
 
-.hero{text-align:center;padding:90px 20px;}
+.hero{text-align:center;padding:80px 20px;}
 
 .hero img{
-width:180px;height:180px;border-radius:50%;
+width:170px;height:170px;border-radius:50%;
 object-fit:cover;
 object-position:center 15%;
 border:3px solid #38bdf8;
-box-shadow:0 0 25px #38bdf8;
-transition:0.4s;
-}
-
-.hero img:hover{
-transform:scale(1.1);
-box-shadow:0 0 50px #38bdf8;
 }
 
 .section{
@@ -58,40 +41,27 @@ max-width:1000px;
 margin:30px auto;
 padding:25px;
 border-radius:15px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-box-shadow:0 0 20px rgba(0,0,0,0.4);
-opacity:0;
-transform:translateY(40px);
-transition:0.6s;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
+background:#0f172a;
 }
 
 h2{color:#38bdf8;margin-bottom:15px;}
 
-.skill{margin-bottom:18px;font-weight:bold;}
-
-.bar{height:8px;background:#1e293b;border-radius:6px;margin-top:6px;}
-.fill{
-height:100%;
-background:#38bdf8;
-width:0;
-transition:1.5s;
-}
+.skill{margin-bottom:15px;}
+.bar{height:8px;background:#1e293b;border-radius:6px;margin-top:5px;}
+.fill{height:100%;background:#38bdf8;}
 
 .card{
-background:rgba(0,0,0,0.4);
-padding:15px;
+background:#020617;
+padding:18px;
 border-radius:10px;
-margin-bottom:12px;
-transition:0.3s;
+margin-bottom:15px;
 }
 
-.card:hover{transform:scale(1.03) translateY(-5px);}
+.price{
+font-size:22px;
+color:#38bdf8;
+margin-top:8px;
+}
 
 button{
 padding:10px 16px;
@@ -102,32 +72,15 @@ font-weight:bold;
 cursor:pointer;
 margin-top:10px;
 }
-
-.typing{color:#38bdf8;font-size:20px;height:28px;}
-
-.cursor{
-width:20px;height:20px;
-border:2px solid #38bdf8;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-transform:translate(-50%,-50%);
-}
-
-@media(max-width:600px){
-nav{flex-direction:column;}
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="cursor" id="cursor"></div>
-
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#services">Services</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -135,82 +88,61 @@ nav{flex-direction:column;}
 <div class="hero">
 <img src="Mukul Stylish Photo.jpg">
 <h1>Mukul Panchal</h1>
-<div class="typing" id="typing"></div>
+<p>Developer • Creator • Freelancer</p>
+<button onclick="window.open('https://wa.me/919266470473')">🔥 Hire Me</button>
 </div>
 
 <div id="about" class="section">
 <h2>About</h2>
-<p>Developer + Creator building modern digital experiences and real-world web projects.</p>
+<p>I help creators & businesses grow with design, content & modern web solutions.</p>
 </div>
 
 <div id="skills" class="section">
 <h2>Skills</h2>
 
-<div class="skill">HTML / CSS<div class="bar"><div class="fill" data-width="85%"></div></div></div>
-<div class="skill">JavaScript<div class="bar"><div class="fill" data-width="65%"></div></div></div>
-<div class="skill">Content Creation<div class="bar"><div class="fill" data-width="90%"></div></div></div>
-<div class="skill">Data Entry<div class="bar"><div class="fill" data-width="80%"></div></div></div>
-<div class="skill">Graphic Designing<div class="bar"><div class="fill" data-width="85%"></div></div></div>
-<div class="skill">Thumbnail Designing<div class="bar"><div class="fill" data-width="92%"></div></div></div>
-<div class="skill">Logo Designing<div class="bar"><div class="fill" data-width="88%"></div></div></div>
-<div class="skill">Video Editing<div class="bar"><div class="fill" data-width="90%"></div></div></div>
+<div class="skill">Content Creation<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div class="skill">Graphic Designing<div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="skill">Thumbnail Designing<div class="bar"><div class="fill" style="width:92%"></div></div></div>
+<div class="skill">Logo Designing<div class="bar"><div class="fill" style="width:88%"></div></div></div>
+<div class="skill">Video Editing<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div class="skill">Data Entry<div class="bar"><div class="fill" style="width:80%"></div></div></div>
+
+</div>
+
+<div id="services" class="section">
+<h2>Services & Pricing</h2>
+
+<div class="card">
+<h3>YouTube Thumbnail Design</h3>
+<div class="price">₹199</div>
+<button onclick="window.open('https://wa.me/919266470473?text=I want Thumbnail Service')">Order Now</button>
+</div>
+
+<div class="card">
+<h3>Logo Design</h3>
+<div class="price">₹299</div>
+<button onclick="window.open('https://wa.me/919266470473?text=I want Logo Design')">Order Now</button>
+</div>
+
+<div class="card">
+<h3>Video Editing</h3>
+<div class="price">₹499</div>
+<button onclick="window.open('https://wa.me/919266470473?text=I want Video Editing')">Order Now</button>
+</div>
 
 </div>
 
 <div id="projects" class="section">
 <h2>Projects</h2>
-<div class="card">Personal Portfolio</div>
+<div class="card">Personal Portfolio Website</div>
 <div class="card">YouTube Creator Automation</div>
-<button onclick="window.open('https://youtube.com/@mukulgrowai')">YouTube</button>
 </div>
 
 <div id="contact" class="section">
 <h2>Contact</h2>
 <p>Email: panchalmukul453@gmail.com</p>
-<button onclick="window.location.href='tel:9266470473'">Call</button>
 <button onclick="window.open('https://wa.me/919266470473')">WhatsApp</button>
 </div>
-
-<script>
-
-// typing
-const text=["Web Developer","Content Creator","Future Full Stack Engineer"];
-let i=0,j=0,isDeleting=false;
-function type(){
-let current=text[i];
-document.getElementById("typing").textContent=current.substring(0,j);
-if(!isDeleting && j<current.length)j++;
-else if(isDeleting && j>0)j--;
-if(j==current.length){isDeleting=true;setTimeout(type,800);return;}
-if(j==0 && isDeleting){isDeleting=false;i=(i+1)%text.length;}
-setTimeout(type,isDeleting?50:100);
-}
-type();
-
-// scroll reveal + skill animation
-const sections=document.querySelectorAll(".section");
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-80){
-sec.classList.add("show");
-}
-});
-
-document.querySelectorAll(".fill").forEach(bar=>{
-if(bar.getBoundingClientRect().top<window.innerHeight-60){
-bar.style.width=bar.getAttribute("data-width");
-}
-});
-});
-
-// cursor
-const cursor=document.getElementById("cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-</script>
 
 </body>
 </html>
